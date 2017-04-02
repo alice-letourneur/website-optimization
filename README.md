@@ -22,8 +22,7 @@ My challenge is to optimize this online portfolio for speed! In particular, opti
 - [x] Unblocking CSS for smartphone portrait mode With Media Queries
 - [x] Removed In Element CSS
 - [x] Remove render-blocking JavaScript : GA script
-
-
+- [x] Using web font loader
 
 ### Part 2: Optimize Frames per Second in pizza.html
 

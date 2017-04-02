@@ -6,10 +6,6 @@
     <meta name="description" content=" FILL ME IN ">
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
-
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/smartphone.min.css" rel="stylesheet" media="screen and (max-width: 480px)">
     <link href="css/print.min.css" rel="stylesheet" media="print">
@@ -24,6 +20,21 @@
     </script>
     <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.min.js"></script>
+    <script>
+      var WebFontConfig = {
+        google: {
+          families: [ 'Open+Sans:400,700' ]
+          },
+        timeout: 2000
+      };
+
+      (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+    </script>
   </head>
 
   <body>
