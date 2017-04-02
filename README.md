@@ -15,6 +15,9 @@ My challenge is to optimize this online portfolio for speed! In particular, opti
 `in progress`
 
 - [x] Optimize images for index.html
+- [x] Minify JS
+- [x] Minify CSS
+- [x] Minify HTML
 
 ### Part 2: Optimize Frames per Second in pizza.html
 
