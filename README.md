@@ -20,6 +20,7 @@ My challenge is to optimize this online portfolio for speed! In particular, opti
 - [x] Minify HTML
 - [x] Unblocking CSS for print style With Media Queries
 - [x] Unblocking CSS for smartphone portrait mode With Media Queries
+- [x] Removed In Element CSS 
 
 
 ### Part 2: Optimize Frames per Second in pizza.html
