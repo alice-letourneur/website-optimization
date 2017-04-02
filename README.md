@@ -14,6 +14,8 @@ My challenge is to optimize this online portfolio for speed! In particular, opti
 
 `in progress`
 
+- [x] Optimize images for index.html
+
 ### Part 2: Optimize Frames per Second in pizza.html
 
 #### Goal
