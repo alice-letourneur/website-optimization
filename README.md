@@ -23,6 +23,7 @@ My challenge is to optimize this online portfolio for speed! In particular, opti
 - [x] Removed In Element CSS
 - [x] Remove render-blocking JavaScript : GA script
 - [x] Using web font loader
+- [x] Inlining critical CSS
 
 ### Part 2: Optimize Frames per Second in pizza.html
 

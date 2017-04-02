@@ -7,6 +7,7 @@ var cleanCSS = require('gulp-clean-css');
 var htmlmin = require('gulp-htmlmin');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
+var critical = require('critical');
 
 //Optimize images
 gulp.task('images', function() {
@@ -21,6 +22,20 @@ gulp.task('minify-css', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/css'));
+});
+
+// Generate & Inline Critical-path CSS
+gulp.task('critical', function () {
+  critical.generate({
+      inline: true,
+      base: 'dist/',
+      src: 'index.html',
+      css: ['dist/css/style.min.css'],
+      dest: 'index.html',
+      width: 320,
+      height: 480,
+      minify: true
+  });
 });
 
 //Minify HTML
@@ -39,4 +54,4 @@ gulp.task('scripts', function() {
 });
 
  // Default Task
-gulp.task('default', ['images','minify','minify-css','scripts']);
+gulp.task('default', ['images','minify','minify-css','scripts','critical']);
