@@ -15,6 +15,11 @@ gulp.task('images', function() {
     .pipe(imagemin())
     .pipe(gulp.dest('dist/img'));
 });
+gulp.task('images-views', function() {
+  return gulp.src(['src/views/images/*.jpg', 'src/views/images/*.png'])
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/views/images'));
+});
 
 //Minify CSS
 gulp.task('minify-css', function() {
@@ -23,15 +28,21 @@ gulp.task('minify-css', function() {
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/css'));
 });
+gulp.task('minify-css-views', function() {
+  return gulp.src('src/views/css/*.css')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist/views/css'));
+});
 
 // Generate & Inline Critical-path CSS
-gulp.task('critical', function () {
+gulp.task('critical-index', ['minify','minify-css'], function () {
   critical.generate({
       inline: true,
-      base: 'dist/',
-      src: 'index.html',
-      css: ['dist/css/style.min.css'],
-      dest: 'index.html',
+      base: './',
+      src: 'dist/index.min.html',
+      css: ['src/css/style.css'],
+      dest: 'dist/index.html',
       width: 320,
       height: 480,
       minify: true
@@ -41,8 +52,15 @@ gulp.task('critical', function () {
 //Minify HTML
 gulp.task('minify', function() {
   return gulp.src('src/*.html')
+    .pipe(rename({suffix: '.min'}))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'));
+});
+gulp.task('minify-views', function() {
+  return gulp.src('src/views/*.html')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('dist/views'));
 });
 
 //Minify Javascript
@@ -52,6 +70,12 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
+gulp.task('scripts-views', function() {
+    return gulp.src('src/views/js/*.js')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/views/js'));
+});
 
  // Default Task
-gulp.task('default', ['images','minify','minify-css','scripts','critical']);
+gulp.task('default', ['images','images-views','critical-index','minify','minify-views','minify-css','minify-css-views','scripts','scripts-views']);
