@@ -518,7 +518,10 @@ function updatePositions() {
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', function() {
+    // Adding requestAnimationFrame to allow function to be called depending on my browser's frame rate
+    requestAnimationFrame(updatePositions);
+})
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
@@ -534,5 +537,6 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-  updatePositions();
+  // Adding requestAnimationFrame to allow function to be called depending on my browser's frame rate
+  requestAnimationFrame(updatePositions);
 });

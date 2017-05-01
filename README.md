@@ -12,8 +12,6 @@ My challenge is to optimize this online portfolio for speed! In particular, opti
 
 #### Optimizations
 
-`in progress`
-
 - [x] Optimize images for index.html
 - [x] Minify JS
 - [x] Minify CSS
@@ -35,3 +33,6 @@ Time to resize pizzas is less than 5 ms using the pizza size slider on the views
 #### Optimizations
 
 `in progress`
+
+- [x]  Adding requestAnimationFrame to allow updatePositions function to be called depending on my browser's frame rate.
+ 
