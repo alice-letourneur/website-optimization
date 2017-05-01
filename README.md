@@ -35,4 +35,5 @@ Time to resize pizzas is less than 5 ms using the pizza size slider on the views
 `in progress`
 
 - [x]  Adding requestAnimationFrame to allow updatePositions function to be called depending on my browser's frame rate.
+- [x]  Reducing the number of images appended on the background
  
