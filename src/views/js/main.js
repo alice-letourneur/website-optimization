@@ -20,6 +20,7 @@ cameron *at* udacity *dot* com
 // Here are arrays of all possible pizza ingredients.
 var pizzaIngredients = {};
 var ticking = false;
+var items;
 pizzaIngredients.meats = [
   "Pepperoni",
   "Sausage",
@@ -498,7 +499,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Selection of elements with class .mover is now outside of the function updatePositions
-var items = document.querySelectorAll('.mover');
+items = document.querySelectorAll('.mover');
 
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
@@ -506,9 +507,10 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
   var itemScrollPosition = document.body.scrollTop / 1250;
 
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(itemScrollPosition + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+  for (var i = items.length; i--;) {
+    var phase =  Math.sin(itemScrollPosition + (i % 5));
+    leftValue = items[i].basicLeft + 100 * phase + 'px';
+    items[i].style.transform = 'translate3d(' + leftValue + ', 0, 0)';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
