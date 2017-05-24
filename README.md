@@ -34,6 +34,9 @@ Time to resize pizzas is less than 5 ms using the pizza size slider on the views
 
 `in progress`
 
-- [x]  Adding requestAnimationFrame to allow updatePositions function to be called depending on my browser's frame rate.
+- [x]  Optimising scroll event with window.requestAnimationFrame
 - [x]  Reducing the number of images appended on the background
- 
+- [x]  Moving the selection of elements with class .mover outside the function updatePositions as we only need to select them once
+- [x]  Moving access to document.body.scrollTop outside of the loop to improve performance
+
+

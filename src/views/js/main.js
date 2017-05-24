@@ -19,6 +19,7 @@ cameron *at* udacity *dot* com
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
 var pizzaIngredients = {};
+var ticking = false;
 pizzaIngredients.meats = [
   "Pepperoni",
   "Sausage",
@@ -498,11 +499,12 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Selection of elements with class .mover is now outside of the function updatePositions
 var items = document.querySelectorAll('.mover');
-var itemScrollPosition = document.body.scrollTop / 1250;
+
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+  var itemScrollPosition = document.body.scrollTop / 1250;
 
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin(itemScrollPosition + (i % 5));
@@ -517,19 +519,23 @@ function updatePositions() {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
+  ticking = false;
 }
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', function() {
     // Adding requestAnimationFrame to allow function to be called depending on my browser's frame rate
+    if (!ticking) {
     requestAnimationFrame(updatePositions);
+    }
+    ticking = true;
 })
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  // Redusing the number of pizza to be loaded
+  // Reducing the number of pizza to be loaded
   for (var i = 0; i < 35; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
