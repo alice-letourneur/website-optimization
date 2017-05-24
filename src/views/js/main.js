@@ -504,7 +504,7 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
   var itemScrollPosition = document.body.scrollTop / 1250;
 
-  for (var i = items.length; i--;) {
+  for (var i = items.length; i >= 0; i--) {
     var phase =  Math.sin(itemScrollPosition + (i % 5));
     leftValue = items[i].basicLeft + 100 * phase + 'px';
     items[i].style.transform = 'translate3d(' + leftValue + ', 0, 0)';
