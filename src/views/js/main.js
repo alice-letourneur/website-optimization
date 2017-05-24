@@ -498,9 +498,6 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
-// Selection of elements with class .mover is now outside of the function updatePositions
-items = document.querySelectorAll('.mover');
-
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
@@ -551,3 +548,5 @@ document.addEventListener('DOMContentLoaded', function() {
   // Adding requestAnimationFrame to allow function to be called depending on my browser's frame rate
   requestAnimationFrame(updatePositions);
 });
+// Selection of elements with class .mover is now outside of the function updatePositions
+items = document.querySelectorAll('.mover');
