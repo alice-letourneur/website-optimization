@@ -545,8 +545,8 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
+  // Selection of elements with class .mover is now outside of the function updatePositions
+  items = document.querySelectorAll('.mover');
   // Adding requestAnimationFrame to allow function to be called depending on my browser's frame rate
   requestAnimationFrame(updatePositions);
 });
-// Selection of elements with class .mover is now outside of the function updatePositions
-items = document.querySelectorAll('.mover');
