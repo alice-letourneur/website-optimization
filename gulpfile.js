@@ -54,5 +54,26 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist/js'));
 });
 
+// Copy Views folder
+gulp.task('copy-html', function(){
+  return gulp.src('src/views/*.html')
+  .pipe(gulp.dest('dist/views'));
+});
+
+gulp.task('copy-css', ['copy-html'], function(){
+  return gulp.src('src/views/css/*.css')
+  .pipe(gulp.dest('dist/views/css'));
+});
+
+gulp.task('copy-js', ['copy-html'], function(){
+  return gulp.src('src/views/js/*.js')
+  .pipe(gulp.dest('dist/views/js'));
+});
+
+gulp.task('copy-img', ['copy-html'], function(){
+  return gulp.src(['src/views/images/*.jpg', 'src/views/images/*.png'])
+  .pipe(gulp.dest('dist/views/images'));
+});
+
  // Default Task
-gulp.task('default', ['images','critical-index','minify','minify-css','scripts']);
+gulp.task('default', ['images','critical-index','minify','minify-css','scripts','copy-html','copy-css','copy-js','copy-img']);
