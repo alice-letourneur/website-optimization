@@ -15,11 +15,6 @@ gulp.task('images', function() {
     .pipe(imagemin())
     .pipe(gulp.dest('dist/img'));
 });
-gulp.task('images-views', function() {
-  return gulp.src(['src/views/images/*.jpg', 'src/views/images/*.png'])
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/views/images'));
-});
 
 //Minify CSS
 gulp.task('minify-css', function() {
@@ -27,12 +22,6 @@ gulp.task('minify-css', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/css'));
-});
-gulp.task('minify-css-views', function() {
-  return gulp.src('src/views/css/*.css')
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist/views/css'));
 });
 
 // Generate & Inline Critical-path CSS
@@ -56,12 +45,6 @@ gulp.task('minify', function() {
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'));
 });
-gulp.task('minify-views', function() {
-  return gulp.src('src/views/*.html')
-    .pipe(rename({suffix: '.min'}))
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('dist/views'));
-});
 
 //Minify Javascript
 gulp.task('scripts', function() {
@@ -70,12 +53,6 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
-gulp.task('scripts-views', function() {
-    return gulp.src('src/views/js/*.js')
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/views/js'));
-});
 
  // Default Task
-gulp.task('default', ['images','images-views','critical-index','minify','minify-views','minify-css','minify-css-views','scripts','scripts-views']);
+gulp.task('default', ['images','critical-index','minify','minify-css','scripts']);
