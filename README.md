@@ -41,17 +41,19 @@ Time to resize pizzas is less than 5 ms using the pizza size slider on the views
 - [x]  Moving the selection of elements with class .randomPizzaContainer outside the function changePizzaSizes as we only need to select them once
 - [x]  Removing calculation of dx function as it is unnecessary, size is now calculated only using the SizeSwitcher function.
 
-#### Test it
+### Test it
 
 1. Clone or download the repository:
 	```bash
-	$ git clone https://github.com/alice-letourneur/website-optimization.git```
+	$ git clone https://github.com/alice-letourneur/website-optimization.git
+	```
 
 2. Run a local server
 	```bash
 	$> cd /path/to/your-project-folder
-	$> python -m SimpleHTTPServer 8080```
-
+	$> python -m SimpleHTTPServer 8080
+	```
+	
 3. Open a browser and visit localhost:8080
 
 or 
