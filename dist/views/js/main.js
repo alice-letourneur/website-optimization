@@ -543,6 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
+    elem.style.left = elem.basicLeft + "px";
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
   // Selection of elements with class .mover is now outside of the function updatePositions
