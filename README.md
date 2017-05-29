@@ -48,13 +48,25 @@ Time to resize pizzas is less than 5 ms using the pizza size slider on the views
 	$ git clone https://github.com/alice-letourneur/website-optimization.git
 	```
 
-2. Run a local server
+2. Go to the root of the project and install all project's dependencies:
+	```bash
+	$ npm install
+	```
+
+3. To implement the task runner type:
+	```bash
+	$ gulp
+	```
+
+A working post-task runner code will be available in 'dist' folder.
+
+4. Run a local server
 	```bash
 	$> cd /path/to/your-project-folder
 	$> python -m SimpleHTTPServer 8080
 	```
-	
-3. Open a browser and visit localhost:8080
+
+5. Open a browser and visit localhost:8080
 
 or 
 
