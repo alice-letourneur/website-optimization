@@ -38,5 +38,6 @@ Time to resize pizzas is less than 5 ms using the pizza size slider on the views
 - [x]  Reducing the number of images appended on the background
 - [x]  Moving the selection of elements with class .mover outside the function updatePositions as we only need to select them once
 - [x]  Moving access to document.body.scrollTop outside of the loop to improve performance
+- [x]  Resize sliding pizza image to avoid having to resize element in the function that initially generates the pizzas
 
 
