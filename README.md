@@ -1,6 +1,6 @@
 ## Website Performance Optimization portfolio project
 
-[![Status](https://img.shields.io/badge/status-in%20progress-yellow.svg)]()
+[![Status](https://img.shields.io/badge/status-completed-green.svg)]()
 
 My challenge is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques I've picked up.
 
@@ -28,11 +28,10 @@ My challenge is to optimize this online portfolio for speed! In particular, opti
 #### Goal
 
 Optimizations made to `views/js/main.js` make `views/pizza.html` render with a consistent frame-rate at 60fps when scrolling.
-Time to resize pizzas is less than 5 ms using the pizza size slider on the views/pizza.html page. Resize time is shown in the browser developer tools.
+Time to resize pizzas is less than 5 ms using the pizza size slider on the views/pizza.html page.
 
 #### Optimizations
 
-`in progress`
 
 - [x]  Optimising scroll event with window.requestAnimationFrame
 - [x]  Reducing the number of images appended on the background
@@ -41,5 +40,22 @@ Time to resize pizzas is less than 5 ms using the pizza size slider on the views
 - [x]  Resize sliding pizza image to avoid having to resize element in the function that initially generates the pizzas
 - [x]  Moving the selection of elements with class .randomPizzaContainer outside the function changePizzaSizes as we only need to select them once
 - [x]  Removing calculation of dx function as it is unnecessary, size is now calculated only using the SizeSwitcher function.
+
+#### Test it
+
+1. Clone or download the repository:
+	```bash
+	$ git clone https://github.com/alice-letourneur/website-optimization.git```
+
+2. Run a local server
+	```bash
+	$> cd /path/to/your-project-folder
+	$> python -m SimpleHTTPServer 8080```
+
+3. Open a browser and visit localhost:8080
+
+or 
+
+Go to click this link https://alice-letourneur.github.io/website-optimization/
 
 
